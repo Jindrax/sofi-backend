@@ -1,3 +1,4 @@
+co/edu/javeriana/seshat/sofiplus/Modules/src/Admin/Methods/BuscarCatalogoFamiempresa.class
 co/edu/javeriana/seshat/sofiplus/Modules/src/Devolucion/Entities/DevolucionMetadata.class
 co/edu/javeriana/seshat/sofiplus/Modules/src/Devolucion/FrontEntities/Devolucion.class
 co/edu/javeriana/seshat/sofiplus/Modules/src/Inventario/Entities/ServicioEntityRepository.class
@@ -66,6 +67,7 @@ co/edu/javeriana/seshat/sofiplus/Modules/src/Inventario/Methods/BuscarCatalogoSe
 co/edu/javeriana/seshat/sofiplus/Modules/src/Devolucion/FrontEntities/ItemDevolucion.class
 co/edu/javeriana/seshat/sofiplus/Modules/src/Factura/FrontEntities/ItemFactura.class
 co/edu/javeriana/seshat/sofiplus/Modules/src/Factura/Methods/ConsolidarFactura.class
+co/edu/javeriana/seshat/sofiplus/Modules/src/Admin/Methods/BuscarCatalogoUsuario.class
 co/edu/javeriana/seshat/sofiplus/Entities/RolFamiempresaEntity.class
 co/edu/javeriana/seshat/sofiplus/Repositories/PersonaEntityRepository.class
 co/edu/javeriana/seshat/sofiplus/Modules/src/Devolucion/Methods/BuscarDevolucion.class
