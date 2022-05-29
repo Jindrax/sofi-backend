@@ -15,7 +15,6 @@ co/edu/javeriana/seshat/sofiplus/SofiplusApplication.class
 co/edu/javeriana/seshat/sofiplus/Modules/src/Devolucion/Entities/ParametrosBusquedaDevolucion.class
 co/edu/javeriana/seshat/sofiplus/Entities/EventoEntityPK.class
 co/edu/javeriana/seshat/sofiplus/Modules/src/Inventario/Methods/RetirarInventario.class
-co/edu/javeriana/seshat/sofiplus/MVCConfig.class
 co/edu/javeriana/seshat/sofiplus/Security/JWTToken.class
 co/edu/javeriana/seshat/sofiplus/Modules/src/Inventario/Entities/ServicioEntityPK.class
 co/edu/javeriana/seshat/sofiplus/Entities/ReaEntity.class
