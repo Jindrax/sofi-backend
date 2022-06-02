@@ -10,7 +10,6 @@ import co.edu.javeriana.seshat.sofiplus.Security.JWTToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.*;
 import java.util.List;
 
 @RestController
@@ -24,9 +23,9 @@ public class ModuleFacturaController {
     }
 
     @GetMapping("/filtrar")
-    public List<Factura> buscarFacturas(@RequestParam TipoBusquedaEnum tipo, @RequestParam String fecha) throws AuthorizationRequiredException {
+    public List<Factura> buscarFacturas(@RequestParam TipoBusquedaEnum tipo, @RequestParam(required = false) String fecha, @RequestParam(required = false) String terceroID) throws AuthorizationRequiredException {
         JWTToken token = (JWTToken) SecurityContextHolder.getContext().getAuthentication().getDetails();
-        return (List<Factura>) Kernel.processRequest("factura/filtrar/get", new RequestMessage(new ParametrosBusquedaFactura(tipo, fecha), token)).run();
+        return (List<Factura>) Kernel.processRequest("factura/filtrar/get", new RequestMessage(new ParametrosBusquedaFactura(tipo, fecha, terceroID), token)).run();
     }
 
     @PostMapping

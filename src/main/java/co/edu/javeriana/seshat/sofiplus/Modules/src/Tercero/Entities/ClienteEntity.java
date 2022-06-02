@@ -1,7 +1,10 @@
 package co.edu.javeriana.seshat.sofiplus.Modules.src.Tercero.Entities;
 
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Tercero.FrontEntities.Cliente;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.Entity;

@@ -5,10 +5,6 @@ import co.edu.javeriana.seshat.sofiplus.Modules.src.Devolucion.Methods.BuscarDev
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Devolucion.Methods.BuscarDevoluciones;
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Devolucion.Methods.ConsolidarDevolucion;
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Devolucion.Methods.CrearDevolucion;
-import co.edu.javeriana.seshat.sofiplus.Modules.src.Factura.Methods.BuscarFactura;
-import co.edu.javeriana.seshat.sofiplus.Modules.src.Factura.Methods.BuscarFacturas;
-import co.edu.javeriana.seshat.sofiplus.Modules.src.Factura.Methods.ConsolidarFactura;
-import co.edu.javeriana.seshat.sofiplus.Modules.src.Factura.Methods.CrearFactura;
 import org.springframework.stereotype.Component;
 
 @Component

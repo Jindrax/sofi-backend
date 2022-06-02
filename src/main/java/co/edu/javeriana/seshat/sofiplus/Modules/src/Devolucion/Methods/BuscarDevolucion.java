@@ -1,8 +1,8 @@
 package co.edu.javeriana.seshat.sofiplus.Modules.src.Devolucion.Methods;
 
 import co.edu.javeriana.seshat.sofiplus.DataFacade.DataBroker;
-import co.edu.javeriana.seshat.sofiplus.Entities.EventoEntity;
-import co.edu.javeriana.seshat.sofiplus.Entities.EventoEntityPK;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.EventoEntity;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.EventoEntityPK;
 import co.edu.javeriana.seshat.sofiplus.Kernel.AuthorizationRequiredException;
 import co.edu.javeriana.seshat.sofiplus.Kernel.Kernel;
 import co.edu.javeriana.seshat.sofiplus.Kernel.ModuleRunnable;

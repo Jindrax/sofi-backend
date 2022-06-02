@@ -1,7 +1,7 @@
 package co.edu.javeriana.seshat.sofiplus.Modules.src.Devolucion.Methods;
 
 import co.edu.javeriana.seshat.sofiplus.DataFacade.DataBroker;
-import co.edu.javeriana.seshat.sofiplus.Entities.EventoEntity;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.EventoEntity;
 import co.edu.javeriana.seshat.sofiplus.Kernel.*;
 import co.edu.javeriana.seshat.sofiplus.Modules.ModuleMethod;
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Devolucion.Entities.ParametrosBusquedaDevolucion;

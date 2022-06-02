@@ -1,7 +1,6 @@
 package co.edu.javeriana.seshat.sofiplus.Modules.src.Devolucion.Entities;
 
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Devolucion.FrontEntities.ItemDevolucion;
-import co.edu.javeriana.seshat.sofiplus.Modules.src.Factura.FrontEntities.ItemFactura;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

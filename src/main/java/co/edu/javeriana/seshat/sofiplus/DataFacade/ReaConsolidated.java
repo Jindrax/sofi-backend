@@ -1,7 +1,7 @@
 package co.edu.javeriana.seshat.sofiplus.DataFacade;
 
-import co.edu.javeriana.seshat.sofiplus.Entities.EventoEntity;
-import co.edu.javeriana.seshat.sofiplus.Entities.ReaEntity;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.EventoEntity;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.ReaEntity;
 
 import java.util.List;
 

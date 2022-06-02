@@ -1,14 +1,14 @@
 package co.edu.javeriana.seshat.sofiplus.Security;
 
 import co.edu.javeriana.seshat.sofiplus.DataFacade.DataBroker;
-import co.edu.javeriana.seshat.sofiplus.Entities.UsuarioEntity;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Admin.Entities.UsuarioEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
-import org.springframework.security.core.userdetails.User;
 
 import java.util.Collections;
 import java.util.Optional;

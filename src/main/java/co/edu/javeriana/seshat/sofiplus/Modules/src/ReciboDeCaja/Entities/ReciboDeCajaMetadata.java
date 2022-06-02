@@ -2,9 +2,6 @@ package co.edu.javeriana.seshat.sofiplus.Modules.src.ReciboDeCaja.Entities;
 
 import org.springframework.data.annotation.Id;
 
-import java.util.Date;
-import java.util.List;
-
 public class ReciboDeCajaMetadata {//viene lo publico
     @Id
     public String id;

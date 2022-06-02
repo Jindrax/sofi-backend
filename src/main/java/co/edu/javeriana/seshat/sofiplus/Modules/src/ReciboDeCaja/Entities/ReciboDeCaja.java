@@ -1,8 +1,6 @@
 package co.edu.javeriana.seshat.sofiplus.Modules.src.ReciboDeCaja.Entities;
 
 
-import java.util.List;
-
 public class ReciboDeCaja {//aca viene lo privado
 
     private String id;

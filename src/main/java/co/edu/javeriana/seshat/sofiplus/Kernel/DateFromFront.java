@@ -1,8 +1,8 @@
 package co.edu.javeriana.seshat.sofiplus.Kernel;
 
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.sql.Date;
 
 public class DateFromFront {
     public static Date format(String date) throws ParseException {

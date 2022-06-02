@@ -1,6 +1,8 @@
 package co.edu.javeriana.seshat.sofiplus.DataFacade;
 
-import co.edu.javeriana.seshat.sofiplus.Entities.*;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.*;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Admin.Entities.FamiempresaEntity;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Admin.Entities.UsuarioEntity;
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Tercero.FrontEntities.Cliente;
 
 import java.sql.Date;
@@ -16,6 +18,8 @@ public interface DataBroker {
 
     public List<EventoEntity> requerirEventosPorFecha(String nitFamiempresa, String tipo, Date fecha);
 
+    public List<EventoEntity> requerirEventosPorAgente(String nitFamiempresa, String tipo, boolean externo, String agenteId);
+
     public ReaConsolidated requerirRea(EventoEntityPK evento);
 
     public void registrarRea(EventoEntity evento, List<ReaEntity> detalles);
@@ -23,6 +27,8 @@ public interface DataBroker {
     public void registrarConsolidados(List<ConsolidadoEntity> consolidados);
 
     public Optional<ConsolidadoEntity> requerirConsolidado(ConsolidadoEntityPK pk);
+
+    public List<ConsolidadoEntity> requerirConsolidadosPorFamiempresa(String nitFamiempresa);
 
     public HashMap<String, Object> requerirMetadata(String key);
 

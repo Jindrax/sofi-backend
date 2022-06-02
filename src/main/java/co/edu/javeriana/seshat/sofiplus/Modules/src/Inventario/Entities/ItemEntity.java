@@ -19,6 +19,7 @@ import java.util.Objects;
 @Setter
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class ItemEntity {
     @Id
     private String nitFamiempresa;

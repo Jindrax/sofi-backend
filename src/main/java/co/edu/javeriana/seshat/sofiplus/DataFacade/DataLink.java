@@ -1,9 +1,12 @@
 package co.edu.javeriana.seshat.sofiplus.DataFacade;
 
-import co.edu.javeriana.seshat.sofiplus.Entities.*;
-import co.edu.javeriana.seshat.sofiplus.Modules.src.Tercero.FrontEntities.Cliente;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.*;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Admin.Entities.FamiempresaEntity;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Admin.Entities.FamiempresaEntityRepository;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Admin.Entities.UsuarioEntity;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Admin.Entities.UsuarioEntityRepository;
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Inventario.Entities.ItemEntityRepository;
-import co.edu.javeriana.seshat.sofiplus.Repositories.*;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Tercero.FrontEntities.Cliente;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -57,6 +60,15 @@ public class DataLink implements DataBroker {
     @Override
     public List<EventoEntity> requerirEventosPorFecha(String nitFamiempresa, String tipo, Date fecha) {
         return eventoEntityRepository.findAllByNitFamiempresaAndTipoEventoAndFecha(nitFamiempresa, tipo, fecha);
+    }
+
+    @Override
+    public List<EventoEntity> requerirEventosPorAgente(String nitFamiempresa, String tipo, boolean externo, String agenteId) {
+        if (externo) {
+            return eventoEntityRepository.findAllByNitFamiempresaAndTipoEventoAndAgenteExterno(nitFamiempresa, tipo, agenteId);
+        } else {
+            return eventoEntityRepository.findAllByNitFamiempresaAndTipoEventoAndAgenteInterno(nitFamiempresa, tipo, agenteId);
+        }
     }
 
     @Override
@@ -146,5 +158,10 @@ public class DataLink implements DataBroker {
     @Override
     public Optional<ConsolidadoEntity> requerirConsolidado(ConsolidadoEntityPK pk) {
         return consolidadoEntityRepository.findById(pk);
+    }
+
+    @Override
+    public List<ConsolidadoEntity> requerirConsolidadosPorFamiempresa(String nitFamiempresa) {
+        return consolidadoEntityRepository.findAllByNitFamiempresa(nitFamiempresa);
     }
 }

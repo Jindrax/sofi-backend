@@ -1,6 +1,8 @@
 package co.edu.javeriana.seshat.sofiplus.Entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import java.util.Objects;
 
 @Entity

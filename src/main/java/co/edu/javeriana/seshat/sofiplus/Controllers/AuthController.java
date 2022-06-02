@@ -1,7 +1,7 @@
 package co.edu.javeriana.seshat.sofiplus.Controllers;
 
 import co.edu.javeriana.seshat.sofiplus.DataFacade.DataBroker;
-import co.edu.javeriana.seshat.sofiplus.Entities.UsuarioEntity;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Admin.Entities.UsuarioEntity;
 import co.edu.javeriana.seshat.sofiplus.Security.CredencialesLogin;
 import co.edu.javeriana.seshat.sofiplus.Security.JWTUtil;
 import co.edu.javeriana.seshat.sofiplus.Security.LoginResponse;

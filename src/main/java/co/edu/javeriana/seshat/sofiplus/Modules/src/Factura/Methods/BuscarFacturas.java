@@ -1,9 +1,10 @@
 package co.edu.javeriana.seshat.sofiplus.Modules.src.Factura.Methods;
 
 import co.edu.javeriana.seshat.sofiplus.DataFacade.DataBroker;
-import co.edu.javeriana.seshat.sofiplus.Entities.EventoEntity;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.EventoEntity;
 import co.edu.javeriana.seshat.sofiplus.Kernel.*;
 import co.edu.javeriana.seshat.sofiplus.Modules.ModuleMethod;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.ComprobanteEgreso.FrontEntities.ComprobanteEgreso;
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Factura.Entities.ParametrosBusquedaFactura;
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Factura.FrontEntities.Factura;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,29 +21,34 @@ public class BuscarFacturas implements ModuleRunnable {
 
     @Override
     public Object run(RequestMessage message) throws AuthorizationRequiredException {
+        String tipoEvento = "FACTURA";
+        String processURI = "factura.consolidarFactura";
         if (message.getCredentials().isEmpty()) {
             throw new AuthorizationRequiredException();
         }
-        ParametrosBusquedaFactura parametrosBusquedaFactura = (ParametrosBusquedaFactura) message.getParams();
+        ParametrosBusquedaFactura parametrosBusquedaEgreso = (ParametrosBusquedaFactura) message.getParams();
         List<EventoEntity> eventos;
         List<Factura> facturas = new ArrayList<>();
-        switch (parametrosBusquedaFactura.getTipoBusqueda()) {
+        switch (parametrosBusquedaEgreso.getTipoBusqueda()) {
             case EVENTO:
-                eventos = broker.requerirEventos(message.getCredentials().get().getFamiempresaID(), "FACTURA");
+                eventos = broker.requerirEventos(message.getCredentials().get().getFamiempresaID(), tipoEvento);
                 break;
             case EVENTOFECHA:
                 try {
-                    eventos = broker.requerirEventosPorFecha(message.getCredentials().get().getFamiempresaID(), "FACTURA", DateFromFront.format(parametrosBusquedaFactura.getFecha()));
+                    eventos = broker.requerirEventosPorFecha(message.getCredentials().get().getFamiempresaID(), tipoEvento, DateFromFront.format(parametrosBusquedaEgreso.getFecha()));
                 } catch (ParseException e) {
                     throw new RuntimeException(e);
                 }
+                break;
+            case EVENTOTERCERO:
+                eventos = broker.requerirEventosPorAgente(message.getCredentials().get().getFamiempresaID(), tipoEvento, true, parametrosBusquedaEgreso.getTerceroID());
                 break;
             default:
                 eventos = new ArrayList<>();
         }
         for (EventoEntity evento :
                 eventos) {
-            facturas.add((Factura) Kernel.processRequest("factura.consolidarFactura", new RequestMessage(evento)).run());
+            facturas.add((Factura) Kernel.processRequest(processURI, new RequestMessage(evento)).run());
         }
         return facturas;
     }

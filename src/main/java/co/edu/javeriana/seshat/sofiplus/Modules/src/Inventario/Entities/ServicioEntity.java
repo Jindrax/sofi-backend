@@ -3,22 +3,21 @@ package co.edu.javeriana.seshat.sofiplus.Modules.src.Inventario.Entities;
 import co.edu.javeriana.seshat.sofiplus.DataFacade.FrontEntity;
 import co.edu.javeriana.seshat.sofiplus.Kernel.DateFromFront;
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Inventario.FrontEntities.Servicio;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Objects;
 
 @Entity
 @IdClass(ServicioEntityPK.class)
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
 public class ServicioEntity implements FrontEntity<Servicio> {
     @Id

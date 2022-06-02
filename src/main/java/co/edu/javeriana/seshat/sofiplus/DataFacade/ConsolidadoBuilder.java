@@ -1,7 +1,7 @@
 package co.edu.javeriana.seshat.sofiplus.DataFacade;
 
-import co.edu.javeriana.seshat.sofiplus.Entities.ConsolidadoEntity;
-import co.edu.javeriana.seshat.sofiplus.Entities.ConsolidadoEntityPK;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.ConsolidadoEntity;
+import co.edu.javeriana.seshat.sofiplus.DataFacade.Entities.ConsolidadoEntityPK;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class ConsolidadoBuilder {
     }
 
     public ConsolidadoBuilder ejecutar(){
-        broker.registrarConsolidados(this.batch);
+        this.broker.registrarConsolidados(this.batch);
         return this;
     }
 }

@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class ParametrosBusquedaFactura {
     TipoBusquedaEnum tipoBusqueda;
     String fecha;
+    String terceroID;
 }

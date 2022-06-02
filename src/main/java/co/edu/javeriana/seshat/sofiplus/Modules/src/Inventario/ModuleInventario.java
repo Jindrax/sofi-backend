@@ -13,6 +13,7 @@ public class ModuleInventario extends BusinessModule {
         this.catalog.put("inventario/item/retirar", RetirarInventario.class);
         this.catalog.put("inventario/servicio/catalog/get", BuscarCatalogoServicio.class);
         this.catalog.put("inventario/servicio/post", CrearServicio.class);
+        this.catalog.put("inventario/item/carga/post", CargarItem.class);
         this.populate();
     }
 }

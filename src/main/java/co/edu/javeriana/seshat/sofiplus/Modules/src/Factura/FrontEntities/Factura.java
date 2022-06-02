@@ -19,4 +19,5 @@ public class Factura {
     double costoTotal;
     double totalItems;
     double totalServicios;
+    double totalImpuestos;
 }

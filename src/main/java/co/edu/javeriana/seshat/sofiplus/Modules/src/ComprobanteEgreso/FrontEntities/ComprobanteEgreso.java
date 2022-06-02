@@ -8,10 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ComprobanteEgreso {
+    String id;
     String fecha;
     double cantidad;
     String porConceptoDe;
-    String recibidoDe;
-    String clienteID;
-    String clienteNombre;
+    String pagadoA;
+    String terceroNombre;
+    String tipoGasto;
 }

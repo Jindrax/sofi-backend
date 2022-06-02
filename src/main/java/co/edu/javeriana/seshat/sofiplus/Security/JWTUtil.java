@@ -1,6 +1,6 @@
 package co.edu.javeriana.seshat.sofiplus.Security;
 
-import co.edu.javeriana.seshat.sofiplus.Entities.UsuarioEntity;
+import co.edu.javeriana.seshat.sofiplus.Modules.src.Admin.Entities.UsuarioEntity;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;

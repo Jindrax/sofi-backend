@@ -3,7 +3,6 @@ package co.edu.javeriana.seshat.sofiplus.Modules.src.Inventario;
 import co.edu.javeriana.seshat.sofiplus.Kernel.AuthorizationRequiredException;
 import co.edu.javeriana.seshat.sofiplus.Kernel.Kernel;
 import co.edu.javeriana.seshat.sofiplus.Kernel.RequestMessage;
-import co.edu.javeriana.seshat.sofiplus.Modules.src.Inventario.FrontEntities.Item;
 import co.edu.javeriana.seshat.sofiplus.Modules.src.Inventario.FrontEntities.Servicio;
 import co.edu.javeriana.seshat.sofiplus.Security.JWTToken;
 import org.springframework.security.core.context.SecurityContextHolder;
