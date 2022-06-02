@@ -36,6 +36,7 @@ public class JWTUtil {
                 .withIssuer("SOFI+")
                 .build();
         DecodedJWT jwt = verifier.verify(token);
-        return new JWTToken(jwt.getClaim("id").asString(), jwt.getClaim("nombre").asString(), jwt.getClaim("email").asString(), jwt.getClaim("famiempresaID").asString(), jwt.getClaim("rol").asString());
+        JWTToken tokenRet = new JWTToken(jwt.getClaim("id").asString(), jwt.getClaim("nombre").asString(), jwt.getClaim("email").asString(), jwt.getClaim("famiempresaID").asString(), jwt.getClaim("rol").asString());
+        return tokenRet;
     }
 }

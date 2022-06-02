@@ -30,17 +30,6 @@ public class AuthController {
     @Autowired
     private DataBroker broker;
 
-    @Autowired
-    private PasswordEncoder encoder;
-
-    @PostMapping("/register")
-    public Map<String, Object> register(@RequestBody UsuarioEntity usuario) {
-        usuario.setPassword(encoder.encode(usuario.getPassword()));
-        broker.registrarUsuario(usuario);
-        String token = jwtUtil.generateToken(usuario);
-        return Collections.singletonMap("jwt-token", token);
-    }
-
     @PostMapping("/login")
     public LoginResponse login(@RequestBody CredencialesLogin credenciales) {
         try {
