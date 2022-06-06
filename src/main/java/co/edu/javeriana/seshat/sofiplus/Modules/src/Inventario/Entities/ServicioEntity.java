@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@ToString
 public class ServicioEntity implements FrontEntity<Servicio> {
     @Id
     private String nitFamiempresa;

@@ -20,6 +20,7 @@ import java.text.SimpleDateFormat;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 class CrearServicioTest {
@@ -56,17 +57,24 @@ class CrearServicioTest {
     @Test
     void run() {
         when(consolidadoBuilderFactory.getBuilder(token.getFamiempresaID())).thenReturn(new ConsolidadoBuilder(token.getFamiempresaID(), broker));
-        when(repository.save(servicio)).thenReturn(servicio);
-//        try {
-//            assertEquals(crearServicio.run(message), servicioFront);
-//
-//        } catch (AuthorizationRequiredException e) {
-//            throw new RuntimeException(e);
-//        }
+        when(repository.save(any(ServicioEntity.class))).thenReturn(servicio);
+        try {
+            assertEquals(crearServicio.run(message), servicioFront);
+        } catch (AuthorizationRequiredException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test
     void runException() {
         assertThrows(AuthorizationRequiredException.class, () -> crearServicio.run(new RequestMessage(token.getFamiempresaID())));
+    }
+
+    @Test
+    void runParseException() {
+        assertThrows(RuntimeException.class, () -> {
+            servicioFront.setFechaCreacion("Hola Mundo");
+            crearServicio.run(new RequestMessage(servicioFront, new JWTToken("1013632535", "Jairo Vanegas", "jairo.vanegas@javeriana.edu.co", "1013632535-3", "ADMIN")));
+        });
     }
 }

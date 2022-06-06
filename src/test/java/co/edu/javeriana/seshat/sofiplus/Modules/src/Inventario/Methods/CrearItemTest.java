@@ -69,4 +69,11 @@ class CrearItemTest {
             crearItem.run(new RequestMessage(token.getFamiempresaID()));
         });
     }
+
+    @Test
+    void runParseException() {
+        assertThrows(RuntimeException.class, () -> {
+            crearItem.run(new RequestMessage(new Item("P1", "TestItem", 20, "Unidades", "Unidad", 19, 1000, 20000, 2000, "hola mundo", "ITEM"), new JWTToken("1013632535", "Jairo Vanegas", "jairo.vanegas@javeriana.edu.co", "1013632535-3", "ADMIN")));
+        });
+    }
 }

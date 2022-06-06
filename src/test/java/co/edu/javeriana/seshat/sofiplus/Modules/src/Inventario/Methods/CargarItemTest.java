@@ -21,6 +21,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.sql.Date;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 class CargarItemTest {
@@ -72,5 +73,12 @@ class CargarItemTest {
         } catch (AuthorizationRequiredException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Test
+    void runException() {
+        assertThrows(AuthorizationRequiredException.class, () -> {
+            cargarItem.run(new RequestMessage(token.getFamiempresaID()));
+        });
     }
 }

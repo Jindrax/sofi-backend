@@ -26,7 +26,7 @@ public class RetirarInventario implements ModuleRunnable {
         try {
             ItemEntity entity = new ItemEntity(retiroItem.getItem(), message.getCredentials().get().getFamiempresaID());
             entity.setCantidad(entity.getCantidad() - retiroItem.getCantidad());
-            return repository.save(entity);
+            return repository.save(entity).getFrontEntity();
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
